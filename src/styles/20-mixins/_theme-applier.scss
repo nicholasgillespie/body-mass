@@ -1,0 +1,162 @@
+// Import design token config
+@import "../00-settings/theme-config";
+
+// Generate global CSS custom properties from theme (use in 30-base/root.scss file)
+@mixin themeCssVariables() {
+  @each $group in $groups {
+    $tokenName: map-get($group, "key");
+    $prefix: map-get($group, "prefix");
+    $token: map-get($theme, $tokenName);
+
+    @each $itemName, $itemValue in $token {
+      // @if type-of($itemValue) == "map" {
+      //   @each $subItemName, $subItemValue in $itemValue {
+      //     --#{$prefix}-#{$itemName}-#{$subItemName}: #{$subItemValue};
+      //   }
+      // } @else {
+      --#{$prefix}-#{$itemName}: #{$itemValue};
+      // }
+    }
+  }
+}
+
+// Mixin to generate utility classes from theme (use in 90-utilities/index.scss file)
+// prettier-ignore
+@mixin themeUtilityClasses() {
+  // Define utility name adjustments
+  $nameAdjust: (
+    "background-color": (
+      "abbr": "bg", 
+      "property": "background"),
+    "color": (
+      "abbr": "text", 
+      "property": "color")
+  );
+
+  @each $group in $groups {
+    $tokenName: map-get($group, "key");
+    $prefix: map-get($group, "prefix");
+    $properties: map-get($group, "properties");
+    $token: map-get($theme, $tokenName);
+
+    @if $properties != null {
+      @each $property in $properties {
+        $propOrAbbr: $property;
+        $propertyValue: $property;
+
+        // Check if property is in nameAdjust
+        @if map-has-key($nameAdjust, $property) {
+          $propOrAbbr: map-get(map-get($nameAdjust, $property), "abbr");
+          $propertyValue: map-get(map-get($nameAdjust, $property), "property");
+        }
+
+        // Exceptions
+        // Generate utility classes for auto and zero spacing
+        @if $tokenName == "spacing" {
+          $propOrAbbr: abbreviate(listToString($property));
+          .u-#{$propOrAbbr}-auto {
+            #{$propertyValue}: auto;
+          }
+          .u-#{$propOrAbbr}-zero {
+            #{$propertyValue}: 0;
+          }
+        }
+
+        @each $itemName in map-keys($token) {
+          .u-#{$propOrAbbr}-#{$itemName} {
+            #{$propertyValue}: var(--#{$prefix}-#{$itemName});
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mixin to generate custom utility classes from theme (use in 90-utilities/index.scss file)
+@mixin themeUtilityCustoms() {
+  $tokenPrefixesProperties: (
+    (
+      "tokenName": "spacing",
+      "prefix": "space-box",
+      "property": "--space-box",
+    ),
+    (
+      "tokenName": "spacing",
+      "prefix": "space-cluster",
+      "property": "--space-cluster",
+    ),
+    (
+      "tokenName": "spacing",
+      "prefix": "space-columns",
+      "property": "--space-columns",
+    ),
+    (
+      "tokenName": "spacing",
+      "prefix": "space-cover",
+      "property": "--space-cover",
+    ),
+    (
+      "tokenName": "spacing",
+      "prefix": "space-flow",
+      "property": "--space-flow",
+    ),
+    (
+      "tokenName": "spacing",
+      "prefix": "space-grid",
+      "property": "--space-grid",
+    ),
+    (
+      "tokenName": "spacing",
+      "prefix": "space-gutter",
+      "property": "--space-gutter",
+    ),
+    (
+      "tokenName": "spacing",
+      "prefix": "space-region",
+      "property": "--space-region",
+    ),
+    (
+      "tokenName": "spacing",
+      "prefix": "space-repel",
+      "property": "--space-repel",
+    ),
+    (
+      "tokenName": "spacing",
+      "prefix": "space-sidebar",
+      "property": "--space-sidebar",
+    ),
+    (
+      "tokenName": "spacing",
+      "prefix": "space-stack",
+      "property": "--space-stack",
+    ),
+    (
+      "tokenName": "spacing",
+      "prefix": "space-switcher",
+      "property": "--space-switcher",
+    )
+  );
+
+  @each $tokenPrefixProperty in $tokenPrefixesProperties {
+    $tokenName: map-get($tokenPrefixProperty, "tokenName");
+    $prefix: map-get($tokenPrefixProperty, "prefix");
+    $property: map-get($tokenPrefixProperty, "property");
+
+    $token: map-get($theme, $tokenName);
+    $tokenPrefix: null;
+
+    @each $group in $groups {
+      @if map-get($group, "key") == $tokenName {
+        $tokenPrefix: map-get($group, "prefix");
+      }
+    }
+
+    @if $token != null and $tokenPrefix != null {
+      @each $itemName, $itemValue in $token {
+        .u-#{$prefix}-#{$itemName} {
+          #{$property}: var(--#{$tokenPrefix}-#{$itemName});
+        }
+      }
+    }
+  }
+}

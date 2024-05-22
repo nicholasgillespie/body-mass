@@ -1,0 +1,40 @@
+/*
+ * CANVAS
+ * A layout that allows for content, breakout, and full-width sections with consistent spacing.
+ * Info: https://ryanmulligan.dev/blog/layout-breakouts/
+ * 
+ * CUSTOM PROPERTIES AND CONFIGURATION
+ * --canvas-full-width: The full width of the content.
+ * --canvas-breakout: The width of the breakout section.
+ * --canvas-content: The width of the content section.
+ *
+ * DATA ATTRIBUTES
+ * A data attribute [data-full-width="contained"] can be used to add padding to the sides of a full-width section.
+ */
+
+.l-canvas {
+  --canvas-full-width: minmax(var(--space-gutter), 1fr);
+  --canvas-content: min(
+    100% - (var(--space-gutter) * 2),
+    var(--layout-base-max)
+  );
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start] var(--canvas-full-width)
+    [content-start]var(--canvas-content) [content-end]
+    var(--canvas-full-width) [full-width-end];
+  position: relative;
+
+  & > * {
+    grid-column: content;
+  }
+
+  & > &--full-width {
+    grid-column: full-width;
+
+    &[data-full-width="contained"] {
+      padding-inline: var(--space-gutter);
+    }
+  }
+}

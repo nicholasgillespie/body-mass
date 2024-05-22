@@ -1,0 +1,32 @@
+// Importing string manipulation functions
+@import "./helpers/string-manipulation.scss";
+
+// Function to retrieve the 'items' from a map
+@function getItems($map) {
+  @return map-get($map, "items");
+}
+
+// Function to format a token by creating a new map with slugified names and corresponding values
+@function formatToken($token, $isNested: null) {
+  $result: ();
+
+  // If the token is nested, handle it differently
+  @if $isNested == "nested" {
+    // Implement nested token formatting here
+  } @else {
+    @each $item in $token {
+      $result: map-merge($result, formatItem($item));
+    }
+  }
+
+  @return $result;
+}
+
+// Function to format an item
+@function formatItem($item) {
+  $name: map-get($item, "name");
+  $slug: slugify($name);
+  $value: map-get($item, "value");
+
+  @return ($slug: $value);
+}

@@ -1,0 +1,19 @@
+$viewports: (
+  "title": "Viewports",
+  "description":
+    "Defines viewport widths for both fluid type and spacing scales, as well as breakpoints for responsive design. The 'min', 'mid', and 'max' values represent screen sizes used for setting breakpoints, while also serving as the minimum and maximum values for generating fluid type and spacing scales.",
+  "items": (
+    (
+      "name": "min",
+      "value": 345,
+    ),
+    (
+      "name": "mid",
+      "value": 690,
+    ),
+    (
+      "name": "max",
+      "value": 1440,
+    ),
+  ),
+);

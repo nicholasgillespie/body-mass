@@ -1,0 +1,48 @@
+// @use "../10-functions/theme-accessor" as *;
+
+.button {
+  // https://piccalil.li/blog/link-button
+  // https://piccalil.li/blog/use-transparent-borders-and-outlines-to-assist-with-high-contrast-mode
+  // view sara soueidan's article on this
+
+  display: inline-flex;
+  gap: var(--button-gap, 0.5ch);
+  align-items: center;
+  justify-content: center;
+  padding: var(--button-padding, 1em 2em);
+  font-size: var(--button-font-size, get(font-size, base));
+  font-family: var(--button-font-family, get(font-family, base));
+  font-weight: var(--button-font-weight), get(font-weight, black);
+  line-height: var(--button-leading, get(line-height, base));
+  text-decoration: none;
+  border: var(--button-border, solid medium transparent);
+  border-radius: var(--button-radius, 2em);
+
+  &[data-button="primary"] {
+    background-color: var(--button-primary-bg, get(color, strong-blue));
+    color: var(--button-primary-text, get(color, white));
+
+    span {
+      color: #8fe3f9;
+    }
+
+    &:hover,
+    &:focus-visible {
+      --button-primary-bg: #{get(color, light-blue)};
+    }
+  }
+
+  &[data-button="secondary"] {
+    background: var(--button-secondary-bg, get(color, purple));
+    color: var(--button-secondary-text, get(color, white));
+
+    span {
+      color: #{get(color, lavender)};
+    }
+
+    &:hover,
+    &:focus-visible {
+      --button-secondary-bg: #b18bdd;
+    }
+  }
+}

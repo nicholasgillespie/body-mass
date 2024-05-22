@@ -1,0 +1,26 @@
+@import "../00-settings/theme-config";
+
+// prettier-ignore
+@mixin media-query($breakpoint: null) {
+  $breakpoints: map-get($theme, "breakpoints");
+  // $breakpoints: (
+  //   "sm": map-get($breakpoints, "min"),
+  //   "md": map-get($breakpoints, "mid"),
+  //   "lg": map-get($breakpoints, "max"),
+  // );
+
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+  @if $breakpoint-value {
+    @media (max-width: #{$breakpoint-value}px) {
+      @content;
+    }
+  } @else {
+    $available-breakpoints: ();
+    @each $key, $value in $breakpoints {
+      $available-breakpoints: append($available-breakpoints, "`#{$key}`: #{$value}px", 'comma');
+    }
+
+    @warn "Invalid value `#{$breakpoint}` for breakpoint. Available values are: #{$available-breakpoints}.";
+  }
+}

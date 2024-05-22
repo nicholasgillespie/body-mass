@@ -1,0 +1,24 @@
+@use "../20-mixins/theme-applier" as *;
+@use "../10-functions/theme-accessor" as *;
+
+:root {
+  // GLOBAL TOKENS --------------------
+  @include themeCssVariables();
+  --measure: 40ch;
+}
+
+:root {
+  // CONTEXTUAL-GENERIC TOKENS --------------------
+  // CONTEXTUAL-CONTENT TOKENS --------------------
+  // Spacing
+  --space-gutter: #{get(space, s-l)};
+  --space-gutter-s: #{get(space, s)};
+  --space-gutter-l: #{get(space, l)};
+  --space-region: #{get(space, 3xl)};
+
+  // Accessibility
+  --focus-ring: 2px solid currentColor;
+  --focus-ring-offset: 2px;
+
+  // COMPONENT-SPECIFIC TOKENS --------------------
+}

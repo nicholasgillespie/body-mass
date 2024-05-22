@@ -1,0 +1,96 @@
+// Import design tokens
+@import "./colors";
+@import "./spacing";
+@import "./font-size";
+@import "./line-height";
+@import "./font-family";
+@import "./font-weight";
+@import "./letter-spacing";
+@import "./viewports";
+
+// Import functions
+@import "../10-functions/token-formatter.scss";
+@import "../10-functions/clamp-generator";
+@import "../10-functions/helpers/string-manipulation.scss";
+@import "../10-functions/helpers/value-providers";
+@import "../10-functions/helpers/map-manipulation";
+
+// Format and process design tokens
+$viewports: formatToken(getItems($viewports));
+$colors: formatToken(getItems($colors));
+$spacing: formatToken(
+  removeSpaces(clampGenerator(getItems($spacing), $viewports))
+);
+$font-size: formatToken(clampGenerator(getItems($font-size), $viewports));
+$line-height: formatToken(getItems($line-height));
+$font-family: formatToken(getItems($font-family));
+$font-weight: formatToken(getItems($font-weight));
+$letter-spacing: formatToken(getItems($letter-spacing));
+
+// Centralize design token values in theme map
+$theme: (
+  "layout": (
+    "base-max": #{map-get($viewports, "max")}px,
+  ),
+  "breakpoints": (
+    "mobile": 400px,
+    "tablet": 600px,
+    "desktop": 800px,
+  ),
+  "colors": $colors,
+  "spacing": $spacing,
+  "font-size": $font-size,
+  "line-height": $line-height,
+  "font-family": $font-family,
+  "font-weight": $font-weight,
+  "letter-spacing": $letter-spacing,
+);
+
+// Define token groups with a key, prefix for CSS variables, and applicable properties.
+// prettier-ignore
+$groups: (
+  (
+    key: "colors",
+    prefix: "color",
+    properties: ("color", "background-color"),
+  ),
+  (
+    key: "spacing",
+    prefix: "space",
+    properties:
+      map-merge(
+        mapPrefix("margin", logicalSuffixes()),
+        mapPrefix("padding", logicalSuffixes())
+      ),
+  ),
+  (
+    key: "font-size",
+    prefix: "font-size",
+    properties: ("font-size"),
+  ),
+  (
+    key: "line-height",
+    prefix: "line-height",
+    properties: ("line-height"),
+  ),
+  (
+    key: "font-family",
+    prefix: "font-family",
+    properties: ("font-family"),
+  ),
+  (
+    key: "font-weight",
+    prefix: "font-weight",
+    properties: ("font-weight"),
+  ),
+  (
+    key: "letter-spacing",
+    prefix: "letter-spacing",
+    properties: ("letter-spacing"),
+  ),
+  (
+    key: "layout",
+    prefix: "layout",
+    properties: (),
+  ),
+);

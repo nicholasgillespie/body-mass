@@ -1,0 +1,71 @@
+// Import modules
+@use "sass:math";
+
+// Import functions
+@import "./helpers/number-manipulation.scss";
+
+// Function to generate clamp() values for design tokens
+@function clampGenerator($token, $viewports) {
+  // Get the minimum and maximum viewport widths
+  $minWidth: map-get($viewports, "min");
+  $maxWidth: map-get($viewports, "max");
+
+  // Initialize the result list
+  $result: ();
+
+  // Iterate over each token
+  @each $item in $token {
+    // Get the name, minimum size, and maximum size of the token
+    $name: map-get($item, "name");
+    $minSize: map-get($item, "min");
+    $maxSize: map-get($item, "max");
+
+    // Set the unit to rem by default, but change it to px if the token uses px
+    $unit: 0.0625rem;
+    @if (map-get($item, "usePx")) {
+      $unit: 1px;
+    }
+
+    // Set the relative unit based on what the token's size is relative to
+    $relativeUnit: 1vw;
+    @if (map-get($item, "relativeTo") == "container") {
+      $relativeUnit: 1cqi;
+    }
+    @if (map-get($item, "relativeTo") == "viewport-inline") {
+      $relativeUnit: 1vi;
+    }
+
+    // If the minimum size is greater than the maximum size, swap them
+    $isNegative: $minSize > $maxSize;
+    @if ($isNegative) {
+      $temp: $minSize;
+      $minSize: $maxSize;
+      $maxSize: $temp;
+    }
+
+    // Calculate the slope and intersection for the token
+    $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+    $intersection: (-1 * $minWidth) * $slope + $minSize;
+
+    // Adjust slope & intersection if minSize originally greater than maxSize
+    @if ($isNegative) {
+      $intersection: math.div((($maxWidth * $slope) + $minSize), 1);
+      $slope: $slope * -1;
+    }
+
+    // Generate the clamp() value for the token
+    $clampValue: "clamp(#{roundValue($minSize * $unit)}, #{roundValue($intersection * $unit)} + #{roundValue($slope * 100) * $relativeUnit}, #{roundValue($maxSize * $unit)})";
+
+    // Add the token's name and clamp() value to the result list
+    $result: append(
+      $result,
+      (
+        "name": $name,
+        "value": $clampValue,
+      )
+    );
+  }
+
+  // Return the result list
+  @return $result;
+}
