@@ -15,6 +15,14 @@
   - Identified the sections, main elements/components, and the [macro layout](../design/01-composition.png).
   - Further identified the components and determined the [micro layout](../design/02-components.png) for those elements.
 
+## 2024-05-22 - Afternoon
+
+### HTML Structure & Accessibility
+
+- Initiated HTML structure setup with a focus on accessibility.
+- Began development of the header, which includes navigation and an intro section to house the Body Mass Index calculator.
+- Noted minimal progress.
+
 ---
 
 ## [Date] - [Session]

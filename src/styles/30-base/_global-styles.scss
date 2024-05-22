@@ -48,22 +48,22 @@ h4 {
 }
 
 h1 {
-  font-size: get(font-size, 4);
+  font-size: get(font-size, 5);
   max-inline-size: 25ch;
 }
 
 h2 {
-  font-size: get(font-size, 3);
+  font-size: get(font-size, 4);
 }
 
 h3 {
-  font-size: get(font-size, 2);
+  font-size: get(font-size, 3);
 }
 
 h4,
 h5,
 h6 {
-  font-size: get(font-size, 1);
+  font-size: get(font-size, 2);
 }
 
 @supports not (font-size-adjust: from-font) {
