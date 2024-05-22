@@ -1,6 +1,6 @@
-# Body Mass Project
+# Body Mass
 
-Visit the live website here: [Body Mass Project Website](https://nicholasgillespie.github.io/body-mass/)
+Visit the live site here: [Body Mass Website](https://nicholasgillespie.github.io/body-mass/)
 
 ## Overview
 
