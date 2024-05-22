@@ -5,15 +5,17 @@
 ### Project Setup
 
 - Set up the project files.
-- Initialized the project on GitHub.
-- Deployed the project to GitHub Pages.
+- Initialized the project on [GitHub](https://github.com/nicholasgillespie/body-mass).
+- Deployed the project to [GitHub Pages](https://nicholasgillespie.github.io/body-mass/).
 
 ### Design Review
 
-- Reviewed the Figma file to:
-  - Define the project design tokens.
-  - Dissect the various sections and components to understand the HTML structure.
-  - Identify the types of styles required for the layouts.
+- Reviewed the [Figma file](https://www.figma.com/design/2YW3dpK8roTgHVAZGZeODF/bmi-calculator?node-id=2-439) to:
+  - Defined the project [design tokens](https://github.com/nicholasgillespie/body-mass/tree/main/src/styles/00-settings).
+  - Identified the sections, main elements/components, and the [macro layout](../design/01-composition.png).
+  - Further identified the components and determined the [micro layout](../design/02-components.png) for those elements.
+
+---
 
 ## [Date] - [Session]
 
