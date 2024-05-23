@@ -6,16 +6,16 @@
 *::after {
   margin: 0;
   padding: 0;
-  // outline: solid 1px hotpink;
+  // outline: solid 1px lightpink;
 }
 
 // GLOBAL SETTINGS ////////////////////
 body {
-  // accent-color: get(color, mint-green);
-  // background: get(color, very-dark-blue);
-  // color: get(color, light-grayish-blue);
+  accent-color: get(color, blue);
+  background: get(color, pure-white);
+  color: get(color, dark-electric-blue);
   font-family: get(font-family, base);
-  font-size: get(font-size, 1);
+  font-size: get(font-size, base);
   font-weight: get(font-weight, base);
   line-height: get(line-height, base);
   letter-spacing: get(letter-spacing, base);
@@ -39,11 +39,12 @@ h2,
 h3,
 h4 {
   font-family: get(font-family, base);
-  font-weight: get(font-weight, base);
+  font-weight: get(font-weight, semi-bold);
   line-height: get(line-height, fine);
-  // color: get(color, mint-green);
-  text-transform: uppercase;
-  // text-wrap: balance;
+  color: get(color, gunmetal);
+  // text-transform: uppercase;
+  letter-spacing: get(letter-spacing, tight);
+  text-wrap: balance;
   hyphens: auto;
 }
 
@@ -98,8 +99,43 @@ b {
 // }
 
 // :is(input, select, textarea) {
-//   accent-color: var(--color-accent);
+// --color-accent: red;
+// accent-color: var(--color-accent);
 // }
+
+:is(
+    input:not([type="checkbox"], [type="radio"], [type="color"]),
+    select,
+    textarea
+  ) {
+  inline-size: 100%;
+  background: transparent;
+  color: currentColor;
+  padding: 0.8em 0.8em;
+  border: var(--border);
+  border-radius: var(--radius);
+  font-size: get(font-size, 1);
+  font-weight: get(font-weight, semi-bold);
+  color: get(color, gunmetal);
+
+  &::placeholder {
+    color: wheat;
+  }
+}
+
+label {
+  // font-size: get(font-size, -1);
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
 
 // :is(
 //     input:not([type="checkbox"], [type="radio"], [type="color"]),
@@ -154,6 +190,13 @@ table {
 
 // INTERACTIVE ELEMENTS ////////////////////
 // A ELEMENT SPECIFICS
+a {
+  display: inline-block;
+
+  &[aria-current="page"] {
+    font-weight: bold;
+  }
+}
 
 // BUTTON STYLES
 

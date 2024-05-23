@@ -1,0 +1,27 @@
+@use "../10-functions/theme-accessor" as *;
+
+header {
+  --space-region: var(--space-m-xl) var(--space-xl-m);
+  --measure: 61ch;
+
+  &:after {
+    content: "";
+    grid-column: full-width-start / span 4;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 0 var(--radius-l) var(--radius-l) 0;
+    background: linear-gradient(to right, #ffffff, #e1f1fe);
+  }
+
+  .logo {
+    block-size: var(--font-size-5);
+  }
+
+  .c-text {
+    --switcher-target-width: var(--item-size-min);
+    --space-flow: 2em;
+    --measure: 50ch;
+    margin-block: auto;
+  }
+}

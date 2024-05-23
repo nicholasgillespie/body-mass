@@ -4,7 +4,9 @@
 :root {
   // GLOBAL TOKENS --------------------
   @include themeCssVariables();
-  --measure: 40ch;
+  --measure: 66ch;
+  --border: 1px solid var(--border-color, currentColor);
+  --item-size-min: 14rem;
 }
 
 :root {
@@ -16,7 +18,11 @@
   --space-gutter-l: #{get(space, l)};
   --space-region: #{get(space, 3xl)};
 
+  --radius: #{get(space, xs)};
+  --radius-l: #{get(space, m)};
+
   // Accessibility
+  --color-accent: #{get(color, blue)};
   --focus-ring: 2px solid currentColor;
   --focus-ring-offset: 2px;
 

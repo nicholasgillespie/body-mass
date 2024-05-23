@@ -1,10 +1,13 @@
 @use "../20-mixins/theme-applier" as *;
 
 @use "./counter-element";
-@use "./match-radii";
+@use "./matched-radius";
+@use "./overlay";
+@use "./overflow";
 @use "./position";
 @use "./text-align";
 @use "./visually-hidden";
+@use "./wireframe";
 
 // Generate utility classes from theme and custom utilities
 @include themeUtilityClasses();

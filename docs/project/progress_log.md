@@ -20,8 +20,33 @@
 ### HTML Structure & Accessibility
 
 - Initiated HTML structure setup with a focus on accessibility.
-- Began development of the header, which includes navigation and an intro section to house the Body Mass Index calculator.
+- Began development of the header, which includes navigation and an intro section to house the Body Mass Index calculator component.
 - Noted minimal progress.
+
+## 2024-05-23 - Morning
+
+### Tech Watch
+
+- Conducted tech watch, resulting in creation of overlay and overflow CSS utility classes.
+
+### Header Development
+
+- Continued development of the header element with a focus on accessibility.
+  - Set the background for the header section.
+  - Started working on the calculator component.
+
+## 2024-05-23 - Afternoon
+
+### Header Development
+
+- Continued development of the calculator component with a focus on accessibility.
+  - Worked on the layout of the form elements.
+  - Styled the checkboxes and partially styled the inputs.
+
+#### TODO
+
+- Update and refine CSS variables in the root, such as `--border`.
+- Improve focus styles in the global styles for better accessibility.
 
 ---
 

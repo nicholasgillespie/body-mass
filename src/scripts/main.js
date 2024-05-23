@@ -1,8 +1,8 @@
-// import emailChecker from "./email-checker.js";
+import linkToButton from "./link-to-button";
 
 const app = {
   initialize() {
-    // emailChecker.activate();
+    linkToButton.activate();
   },
 };
 

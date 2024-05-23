@@ -13,8 +13,8 @@
  */
 
 .l-box {
-  color: var(--box-color, var(--color-global-text));
-  background-color: var(--box-bg, var(--color-global-bg));
+  // color: var(--box-color, currentColor);
+  // background-color: var(--box-bg, var(--color-global-bg));
   border: var(--box-border, solid medium transparent);
   border-radius: var(--box-border-radius, 0);
   max-inline-size: unset;

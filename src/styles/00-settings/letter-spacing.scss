@@ -6,14 +6,14 @@ $letter-spacing: (
     //   "name": "Extra Tight",
     //   "value": -0.075ch,
     // ),
-    // (
-    //   "name": "Tight",
-    //   "value": -0.05ch,
-    // ),
     (
-        "name": "Base",
-        "value": normal,
+        "name": "Tight",
+        "value": -0.05ch,
       ),
+    (
+      "name": "Base",
+      "value": normal,
+    ),
     // (
     //   "name": "Loose",
     //   "value": 0.1ch,
@@ -21,6 +21,6 @@ $letter-spacing: (
     // (
     //   "name": "Extra Loose",
     //   "value": 0.2ch,
-    // ),,
+    // ),,,
   ),
 );

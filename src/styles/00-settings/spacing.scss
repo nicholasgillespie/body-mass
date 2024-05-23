@@ -54,26 +54,6 @@ $spacing: (
       "max": 108,
     ),
     // space value pairs - single steps
-    (
-        "name": "S - M",
-        "min": 16,
-        "max": 27,
-      ),
-    (
-      "name": "M - L",
-      "min": 24,
-      "max": 36,
-    ),
-    (
-      "name": "XL - 2XL",
-      "min": 48,
-      "max": 72,
-    ),
-    (
-      "name": "2XL - 3XL",
-      "min": 64,
-      "max": 108,
-    ),
     // space value pairs - custom steps
     (
         "name": "S - L",
@@ -81,14 +61,14 @@ $spacing: (
         "max": 36,
       ),
     (
-      "name": "L - 3XL",
-      "min": 32,
-      "max": 108,
+      "name": "M - XL",
+      "min": 24,
+      "max": 54,
     ),
     (
-      "name": "XL - 2XL",
+      "name": "XL - M",
       "min": 48,
-      "max": 72,
+      "max": 27,
     ),
   ),
 );

@@ -1,0 +1,24 @@
+/*
+ * MATCH RADIUS
+ * Matches border radius of parent and child elements.
+ * Useful for consistent appearance.
+ * Info: https://set.studio/relative-rounded-corners/
+ * 
+ * CUSTOM PROPERTIES
+ * --match-radius-space: Padding of parent element.
+ * --match-radius-inner-radius: Border radius of child elements.
+ */
+
+.u-matched-radius {
+  --matched-radius-space: var(--space-box, var(--space-gutter));
+  --matched-radius-inner-radius: var(--box-border-radius, var(--radius));
+
+  padding: var(--matched-radius-space);
+  border-radius: calc(
+    var(--matched-radius-inner-radius) + var(--matched-radius-space)
+  );
+
+  & .u-matched-radius__inner {
+    border-radius: var(--matched-radius-inner-radius);
+  }
+}

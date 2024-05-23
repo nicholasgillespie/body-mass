@@ -13,7 +13,8 @@
   }
 
   &[aria-current="page"] {
-    //
+    font-weight: bold;
+    background-color: red;
   }
 
   & > img {
