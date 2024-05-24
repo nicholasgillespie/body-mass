@@ -32,8 +32,8 @@
       <!-- <div class="test">x</div> -->
       <nav aria-label="Site" class="l-region">
         <!-- <ul role="list"><li> -->
-        <a href="#" aria-current="page">
-          <img class="logo" src="/images/logo.svg" alt="" />
+        <a href="#" aria-current="page" class="logo">
+          <img src="/images/logo.svg" alt="" />
           <span class="u-vh">Homepage</span>
         </a>
         <!-- </li></ul> -->
@@ -53,7 +53,11 @@
             <h2 class="u-font-size-2">Enter your details below</h2>
 
             <!-- Measurement System -->
-            <div role="radiogroup" aria-labelledby="measurement_system_label">
+            <div
+              role="radiogroup"
+              aria-labelledby="measurement_system_label"
+              class="c-calculator__checkbox"
+            >
               <p id="measurement_system_label" class="u-vh">
                 Choose measurement system:
               </p>
@@ -81,7 +85,7 @@
             </div>
 
             <!-- Height and Weight Inputs -->
-            <div class="l-switcher">
+            <div class="[ c-calculator__inputs ][ l-switcher ]">
               <div class="l-stack">
                 <label for="height_label">Height</label>
                 <input
@@ -105,7 +109,9 @@
             </div>
 
             <!-- Result -->
-            <div class="[ c-result ][ l-box l-flow ]">
+            <div
+              class="[ c-calculator__result ][ l-box l-flow u-matched-radius__inner ]"
+            >
               <h3>Welcome!</h3>
               <p>
                 Enter your height and weight and you’ll see your BMI result here

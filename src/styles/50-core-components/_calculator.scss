@@ -8,9 +8,9 @@
 
   max-inline-size: 50%;
   background-color: get(color, pure-white);
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: var(--shadow);
 
-  & [role="radiogroup"] {
+  &__checkbox {
     --space-cluster: var(--space-gutter-s);
 
     color: get(color, gunmetal);
@@ -22,9 +22,7 @@
       inline-size: get(font-size, 2);
       background-color: transparent;
       border: var(--border);
-      border-color: var(--color-gunmetal);
       border-radius: 100%;
-      // outline: none;
       position: relative;
       display: grid;
       place-items: center;
@@ -36,8 +34,9 @@
         block-size: 50%;
         background-color: get(color, blue);
         border-radius: 100%;
-        position: relative;
         transform: scale(0);
+        border: var(--border);
+        border-color: get(color, blue);
       }
 
       &:checked {
@@ -56,8 +55,17 @@
     }
   }
 
-  & .c-result {
+  &__inputs {
+    // deal with span in inputs
+  }
+
+  &__result {
+    --matched-radius-space: calc(var(--radius) - var(--space-gutter));
+    --box-radius-min: max(var(--matched-radius-space), var(--radius-s));
+
     background-color: get(color, blue);
+    border-radius: var(--box-radius-min) var(--space-3xl) var(--space-3xl)
+      var(--box-radius-min);
 
     & * {
       --space-flow: 1em;

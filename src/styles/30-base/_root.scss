@@ -4,27 +4,47 @@
 :root {
   // GLOBAL TOKENS --------------------
   @include themeCssVariables();
+
+  // Fundamental layout measures
+  --item-size-min: 15rem;
   --measure: 66ch;
-  --border: 1px solid var(--border-color, currentColor);
-  --item-size-min: 14rem;
 }
 
 :root {
-  // CONTEXTUAL-GENERIC TOKENS --------------------
-  // CONTEXTUAL-CONTENT TOKENS --------------------
   // Spacing
   --space-gutter: #{get(space, s-l)};
   --space-gutter-s: #{get(space, s)};
   --space-gutter-l: #{get(space, l)};
   --space-region: #{get(space, 3xl)};
 
-  --radius: #{get(space, xs)};
-  --radius-l: #{get(space, m)};
+  // Typography
+  // --text-size-base: #{get(font-size, base)};
+  // --text-size-heading-1: #{get(font-size, 5)};
+  // --text-size-heading-2: #{get(font-size, 4)};
+  // --text-size-heading-3: #{get(font-size, 3)};
+  // --text-size-heading-4: #{get(font-size, 2)};
 
-  // Accessibility
-  --color-accent: #{get(color, blue)};
-  --focus-ring: 2px solid currentColor;
-  --focus-ring-offset: 2px;
+  // Radius
+  --radius: #{get(space, xs)};
+  --radius-s: #{get(space, 2xs)};
+  --radius-l: #{get(space, xl)};
+
+  // Decorations
+  --focus-color: #{get(color, blue)};
+  --border-color: #{get(color, gunmetal)};
+  --border-width: 1px;
+  --border: solid var(--border-width) var(--border-color);
+  --shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  --thadow: 0px 8px 24px rgba(149, 157, 165, 0.2);
+
+  // Transition
+  // --transition-base: 250ms ease;
+  // --transition-movement: 200ms linear;
+  // --transition-fade: 300ms ease;
+  // --transition-bounce: 500ms cubic-bezier(0.5, 0.05, 0.2, 1.5);
 
   // COMPONENT-SPECIFIC TOKENS --------------------
 }
+
+// CONTEXTUAL-GENERIC TOKENS --------------------
+// CONTEXTUAL-CONTENT TOKENS --------------------

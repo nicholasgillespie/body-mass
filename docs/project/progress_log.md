@@ -48,6 +48,19 @@
 - Update and refine CSS variables in the root, such as `--border`.
 - Improve focus styles in the global styles for better accessibility.
 
+## 2024-05-24 - Morning
+
+### Header Development
+
+- Completed pending tasks from the previous day, including refining CSS root variables and enhancing global focus styles.
+- Progressed with the calculator component, focusing on accessibility.
+  - Improved the box class by ensuring border radius ratios are maintained when nested and by making it compatible with high contrast modes.
+  - Ensured checkbox visibility in high contrast mode.
+
+#### TODO
+
+- Deal with including the measure value in the height and weight input elements.
+
 ---
 
 ## [Date] - [Session]

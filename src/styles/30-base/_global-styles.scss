@@ -202,12 +202,14 @@ a {
 
 // INTERACTIVE STATES ////////////////////
 // SELECTION
+// Accessibility
+// --color-accent: #{get(color, blue)};
+// --focus-ring: 2px solid currentColor;
+// --focus-ring-offset: 2px;
 
 // FOCUS AND TARGET STATES
 :focus {
-  // --focus-color: #{get(color, mint-green)};
-  outline: 2px solid var(--focus-color, currentColor);
-  // outline-offset: 0.65ch;
+  outline: 1px solid var(--focus-color, currentColor);
   outline-offset: var(--focus-offset, 0.2lh);
 }
 

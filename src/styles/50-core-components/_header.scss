@@ -15,7 +15,11 @@ header {
   }
 
   .logo {
-    block-size: var(--font-size-5);
+    border-radius: 100%;
+
+    img {
+      block-size: var(--font-size-5);
+    }
   }
 
   .c-text {
