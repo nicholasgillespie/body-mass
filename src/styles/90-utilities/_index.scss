@@ -7,7 +7,7 @@
 @use "./position";
 @use "./text-align";
 @use "./visually-hidden";
-// @use "./wireframe";
+@use "./wireframe";
 
 // Generate utility classes from theme and custom utilities
 @include themeUtilityClasses();

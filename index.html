@@ -48,76 +48,80 @@
             to evaluate your overall health and well-being.
           </p>
         </div>
-        <div class="[ c-calculator ][ l-box ]">
-          <form action="" aria-labelledby="calculator_label" class="l-flow">
-            <h2 class="u-font-size-2">Enter your details below</h2>
-
-            <!-- Measurement System -->
-            <div
-              role="radiogroup"
-              aria-labelledby="measurement_system_label"
-              class="c-calculator__checkbox"
-            >
-              <p id="measurement_system_label" class="u-vh">
-                Choose measurement system:
-              </p>
-              <div class="l-switcher">
-                <div class="l-cluster">
-                  <input
-                    type="radio"
-                    id="metric_label"
-                    name="measurement_system"
-                    value="metric"
-                    checked
-                  />
-                  <label for="metric_label">Metric</label>
+        <div class="u-position--relative">
+          <div class="[ c-calculator ][ l-box ]">
+            <form action="" aria-labelledby="calculator_label" class="l-flow">
+              <h2 class="u-font-size-2">Enter your details below</h2>
+              <!-- Measurement System -->
+              <div
+                role="radiogroup"
+                aria-labelledby="measurement_system_label"
+                class="c-calculator__checkbox"
+              >
+                <p id="measurement_system_label" class="u-vh">
+                  Choose measurement system:
+                </p>
+                <div class="l-switcher">
+                  <div class="l-cluster">
+                    <input
+                      type="radio"
+                      id="metric_label"
+                      name="measurement_system"
+                      value="metric"
+                      checked
+                    />
+                    <label for="metric_label">Metric</label>
+                  </div>
+                  <div class="l-cluster">
+                    <input
+                      type="radio"
+                      id="imperial_label"
+                      name="measurement_system"
+                      value="imperial"
+                    />
+                    <label for="imperial_label">Imperial</label>
+                  </div>
                 </div>
-                <div class="l-cluster">
-                  <input
-                    type="radio"
-                    id="imperial_label"
-                    name="measurement_system"
-                    value="imperial"
-                  />
-                  <label for="imperial_label">Imperial</label>
+              </div>
+              <!-- Height and Weight Inputs -->
+              <div class="[ c-calculator__inputs ][ l-switcher ]">
+                <div class="[ c-calculator__inputs--height ][ l-stack ]">
+                  <label for="height_label">Height</label>
+                  <div class="input-wrapper">
+                    <input
+                      type="number"
+                      id="height_label"
+                      name="height"
+                      value="0"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="[ c-calculator__inputs--weight ][ l-stack ]">
+                  <label for="weight_label">Weight</label>
+                  <div class="input-wrapper">
+                    <input
+                      type="number"
+                      id="weight_label"
+                      name="weight"
+                      value="0"
+                      required
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <!-- Height and Weight Inputs -->
-            <div class="[ c-calculator__inputs ][ l-switcher ]">
-              <div class="l-stack">
-                <label for="height_label">Height</label>
-                <input
-                  type="number"
-                  id="height_label"
-                  name="height"
-                  value="0"
-                  required
-                />
+              <!-- Result -->
+              <div
+                class="[ c-calculator__result ][ l-box l-flow u-matched-radius__inner ]"
+              >
+                <h3>Welcome!</h3>
+                <p>
+                  Enter your height and weight and you’ll see your BMI result
+                  here
+                </p>
               </div>
-              <div class="l-stack">
-                <label for="weight_label">Weight</label>
-                <input
-                  type="number"
-                  id="weight_label"
-                  name="weight"
-                  value="0"
-                  required
-                />
-              </div>
-            </div>
-
-            <!-- Result -->
-            <div
-              class="[ c-calculator__result ][ l-box l-flow u-matched-radius__inner ]"
-            >
-              <h3>Welcome!</h3>
-              <p>
-                Enter your height and weight and you’ll see your BMI result here
-              </p>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </section>
     </header>

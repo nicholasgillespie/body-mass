@@ -6,7 +6,7 @@
   --space-stack: 0.5em;
   --space-flow: 2em;
 
-  max-inline-size: 50%;
+  position: absolute;
   background-color: get(color, pure-white);
   box-shadow: var(--shadow);
 
@@ -56,7 +56,36 @@
   }
 
   &__inputs {
-    // deal with span in inputs
+    .input-wrapper {
+      position: relative;
+      display: inline-block;
+
+      input {
+        padding-inline-end: calc(2ch + calc(0.8em * 2));
+      }
+
+      &::after {
+        font-size: get(font-size, 1);
+        font-weight: get(font-weight, semi-bold);
+        color: get(color, blue);
+        position: absolute;
+        inset-inline-end: 0.8em;
+        inset-block-start: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &--height {
+      .input-wrapper::after {
+        content: "cm";
+      }
+    }
+
+    &--weight {
+      .input-wrapper::after {
+        content: "kg";
+      }
+    }
   }
 
   &__result {

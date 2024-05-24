@@ -52,14 +52,25 @@
 
 ### Header Development
 
-- Completed pending tasks from the previous day, including refining CSS root variables and enhancing global focus styles.
+- Completed the pending TODO tasks.
 - Progressed with the calculator component, focusing on accessibility.
   - Improved the box class by ensuring border radius ratios are maintained when nested and by making it compatible with high contrast modes.
   - Ensured checkbox visibility in high contrast mode.
 
 #### TODO
 
-- Deal with including the measure value in the height and weight input elements.
+- Deal with including the measure units in the height and weight input elements.
+
+## 2024-05-24 - Afternoon
+
+### Header Development
+
+- Completed the pending TODO tasks.
+- Continued building the header. The spacing of the header has been sorted for desktop view down to 800px. The transition to mobile view should be relatively straightforward.
+
+#### TODO
+
+- Prepare for the switch to the imperial measurement system, which will require additional input boxes. Plan to use a JavaScript-based toggle system to switch between measurement systems.
 
 ---
 
