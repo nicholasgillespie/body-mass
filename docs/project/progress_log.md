@@ -73,6 +73,20 @@
 - Prepare the switch for the imperial measurement system, which will require additional input boxes. Plan to use a JavaScript-based toggle system to switch between measurement systems.
 - In production, the input elements are not getting styled as expected. Need to investigate and resolve this issue.
 
+## 2024-05-25 - Morning
+
+### Header Development
+
+- Started working on the pending TODO tasks from the previous day.
+- Added the additional input boxes for the imperial measurement system.
+- Currently implementing the JavaScript-based toggle system to switch between the metric and imperial measurement systems.
+
+#### TODO
+
+- Complete the implementation of the JavaScript-based toggle system for the measurement systems.
+- Test the toggle system to ensure it works as expected.
+- Continue with the development of the calculator BMI results.
+
 ---
 
 ## [Date] - [Session]

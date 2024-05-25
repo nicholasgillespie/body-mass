@@ -1,8 +1,10 @@
-import linkToButton from "./link-to-button";
+import calculator from "./calculator";
+// import linkToButton from "./link-to-button";
 
 const app = {
   initialize() {
-    linkToButton.activate();
+    // linkToButton.activate();
+    calculator.activate();
   },
 };
 

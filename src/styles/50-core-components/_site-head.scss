@@ -1,0 +1,31 @@
+@use "../10-functions/theme-accessor" as *;
+
+.site-head {
+  // background
+  &:after {
+    content: "";
+    grid-column: full-width-start / span 4;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 0 0 var(--radius-l) 0;
+    background: linear-gradient(to right, #ffffff, #e1f1fe);
+  }
+
+  // navigation
+  nav {
+    --nav-block-size: calc(
+      var(--space-m-xl) + var(--space-xl-l) + var(--font-size-5)
+    );
+    padding-block: var(--space-m-xl) var(--space-xl-l);
+    max-block-size: var(--nav-block-size);
+
+    .logo {
+      border-radius: 100%;
+
+      img {
+        block-size: var(--font-size-5);
+      }
+    }
+  }
+}

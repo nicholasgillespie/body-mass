@@ -24,9 +24,6 @@
   }
 
   & > * + * {
-    margin-block-start: var(
-      --space-stack,
-      calc(var(--line-height-base) * 1rem)
-    );
+    margin-block-start: var(--space-stack, var(--space-gutter));
   }
 }

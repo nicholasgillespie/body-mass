@@ -1,29 +1,18 @@
 @use "../10-functions/theme-accessor" as *;
 
-.calculator {
-  --item-size-min: 20rem;
+.c-calculator {
   --switcher-target-width: var(--item-size-min);
-  --space-switcher: var(--space-gutter-m);
-  --space-flow: var(--space-gutter);
-  --space-stack: var(--space-2xs);
-  --space-cluster: var(--space-gutter-s);
+  --space-switcher: var(--space-s-m);
+  --space-stack: 0.5em;
+  --space-flow: 2em;
 
   position: absolute;
   background-color: get(color, pure-white);
   box-shadow: var(--shadow);
 
-  @media screen and (max-width: 800px) {
-    --item-size-min: 15rem;
-  }
+  &__checkbox {
+    --space-cluster: var(--space-s);
 
-  fieldset {
-    border: none;
-    .l-switcher {
-      --space-switcher: var(--space-gutter);
-    }
-  }
-
-  .calculator__switch {
     color: get(color, gunmetal);
     font-weight: get(font-weight, semi-bold);
 
@@ -34,6 +23,7 @@
       background-color: transparent;
       border: var(--border);
       border-radius: 100%;
+      position: relative;
       display: grid;
       place-items: center;
 
@@ -65,31 +55,37 @@
     }
   }
 
-  .calculator__inputs {
-    --space-switcher: var(--space-gutter);
-
-    .js-imperial {
-      display: none;
-    }
-
-    .l-stack {
+  &__inputs {
+    .input-wrapper {
       position: relative;
+      display: inline-block;
 
-      span {
-        --space-stack: 0;
-        position: absolute;
-        inset-block-end: calc(var(--border-width) + var(--space-gutter-s));
-        inset-inline-end: calc(var(--border-width) + var(--space-gutter-s));
-        color: get(color, blue);
+      input {
+        padding-inline-end: calc(2ch + calc(0.8em * 2));
+      }
+
+      &::after {
         font-size: get(font-size, 1);
-        line-height: get(line-height, fine);
         font-weight: get(font-weight, semi-bold);
+        color: get(color, blue);
+        position: absolute;
+        inset-inline-end: 0.8em;
+        inset-block-start: 50%;
+        transform: translateY(-50%);
       }
     }
-  }
 
-  .calculator__result {
-    //
+    &--height {
+      .input-wrapper::after {
+        content: "cm";
+      }
+    }
+
+    &--weight {
+      .input-wrapper::after {
+        content: "kg";
+      }
+    }
   }
 
   &__result {

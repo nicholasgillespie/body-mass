@@ -28,19 +28,16 @@
     <script type="module" defer src="/src/scripts/main.js"></script>
   </head>
   <body>
-    <header class="l-canvas">
-      <!-- <div class="test">x</div> -->
-      <nav aria-label="Site" class="l-region">
-        <!-- <ul role="list"><li> -->
+    <header class="[ site-head ][ l-canvas ]">
+      <nav aria-label="Site">
         <a href="#" aria-current="page" class="logo">
           <img src="/images/logo.svg" alt="" />
           <span class="u-vh">Homepage</span>
         </a>
-        <!-- </li></ul> -->
       </nav>
-      <section class="l-switcher">
-        <div class="c-text l-flow">
-          <h1 id="calculator_label">Body Mass Index Calculator</h1>
+      <section class="[ hero ][ l-switcher ]">
+        <div class="[ hero__left ][ l-flow ]">
+          <h1 id="hero__title">Body Mass Index Calculator</h1>
           <p>
             Better understand your weight in relation to your height using our
             body mass index (BM) calculator. While BMI is not the sole
@@ -48,79 +45,125 @@
             to evaluate your overall health and well-being.
           </p>
         </div>
-        <div class="u-position--relative">
-          <div class="[ c-calculator ][ l-box ]">
-            <form action="" aria-labelledby="calculator_label" class="l-flow">
-              <h2 class="u-font-size-2">Enter your details below</h2>
-              <!-- Measurement System -->
-              <div
-                role="radiogroup"
-                aria-labelledby="measurement_system_label"
-                class="c-calculator__checkbox"
-              >
-                <p id="measurement_system_label" class="u-vh">
-                  Choose measurement system:
-                </p>
-                <div class="l-switcher">
-                  <div class="l-cluster">
-                    <input
-                      type="radio"
-                      id="metric_label"
-                      name="measurement_system"
-                      value="metric"
-                      checked
-                    />
-                    <label for="metric_label">Metric</label>
+        <div class="hero__right">
+          <div class="[ calculator ][ l-box ]">
+            <form
+              class="[ calculator__form ][ l-flow ]"
+              aria-labelledby="hero__title"
+            >
+              <!-- Form Title -->
+              <h2 class="u-font-size-1">Enter your details below</h2>
+
+              <!-- Unit Switcher -->
+              <div class="calculator__switch">
+                <fieldset>
+                  <legend class="u-vh">Measurement Units</legend>
+                  <div class="l-switcher">
+                    <div class="l-cluster">
+                      <input
+                        type="radio"
+                        id="metric"
+                        name="units"
+                        value="metric"
+                        checked
+                      />
+                      <label for="metric"
+                        >Metric
+                        <span class="u-vh"
+                          >meters/centimeters, kilograms</span
+                        ></label
+                      >
+                    </div>
+                    <div class="l-cluster">
+                      <input
+                        type="radio"
+                        id="imperial"
+                        name="units"
+                        value="imperial"
+                      />
+                      <label for="imperial"
+                        >Imperial
+                        <span class="u-vh"
+                          >feet/inches, stones/pounds</span
+                        ></label
+                      >
+                    </div>
                   </div>
-                  <div class="l-cluster">
-                    <input
-                      type="radio"
-                      id="imperial_label"
-                      name="measurement_system"
-                      value="imperial"
-                    />
-                    <label for="imperial_label">Imperial</label>
-                  </div>
-                </div>
+                </fieldset>
               </div>
-              <!-- Height and Weight Inputs -->
-              <div class="[ c-calculator__inputs ][ l-switcher ]">
-                <div class="[ c-calculator__inputs--height ][ l-stack ]">
-                  <label for="height_label">Height</label>
-                  <div class="input-wrapper">
-                    <input
-                      type="number"
-                      id="height_label"
-                      name="height"
-                      value="0"
-                      required
-                    />
+
+              <!-- Height Input Fields -->
+              <div class="[ calculator__inputs ][ xxx l-switcher ]">
+                <!-- Height Inputs -->
+                <fieldset>
+                  <legend class="u-vh">Height</legend>
+                  <div class="l-switcher">
+                    <div class="[ l-stack ][ js-metric ]">
+                      <label for="centimeters">Centimeters</label>
+                      <input
+                        type="number"
+                        id="centimeters"
+                        name="centimeters"
+                        value="0"
+                      />
+                      <span>cm</span>
+                    </div>
+                    <div class="[ l-stack ][ js-imperial ]">
+                      <label for="feet">Feet</label>
+                      <input type="number" id="feet" name="feet" value="0" />
+                      <span>ft</span>
+                    </div>
+                    <div class="[ l-stack ][ js-imperial ]">
+                      <label for="inches">Inches</label>
+                      <input
+                        type="number"
+                        id="inches"
+                        name="inches"
+                        value="0"
+                      />
+                      <span>in</span>
+                    </div>
                   </div>
-                </div>
-                <div class="[ c-calculator__inputs--weight ][ l-stack ]">
-                  <label for="weight_label">Weight</label>
-                  <div class="input-wrapper">
-                    <input
-                      type="number"
-                      id="weight_label"
-                      name="weight"
-                      value="0"
-                      required
-                    />
+                </fieldset>
+                <!-- Weight Inputs -->
+                <fieldset>
+                  <legend class="u-vh">Weight</legend>
+                  <div class="l-switcher">
+                    <div class="[ l-stack ][ js-metric ]">
+                      <label for="kilograms">Kilograms</label>
+                      <input
+                        type="number"
+                        id="kilograms"
+                        name="kilograms"
+                        value="0"
+                      />
+                      <span>kg</span>
+                    </div>
+                    <div class="[ l-stack ][ js-imperial ]">
+                      <label for="stones">Stones</label>
+                      <input
+                        type="number"
+                        id="stones"
+                        name="stones"
+                        value="0"
+                      />
+                      <span>st</span>
+                    </div>
+                    <div class="[ l-stack ][ js-imperial ]">
+                      <label for="pounds">Pounds</label>
+                      <input
+                        type="number"
+                        id="pounds"
+                        name="pounds"
+                        value="0"
+                      />
+                      <span>lbs</span>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <!-- Result -->
-              <div
-                class="[ c-calculator__result ][ l-box l-flow u-matched-radius__inner ]"
-              >
-                <h3>Welcome!</h3>
-                <p>
-                  Enter your height and weight and you’ll see your BMI result
-                  here
-                </p>
+                </fieldset>
               </div>
             </form>
+            <div class="calculator__result"></div>
           </div>
         </div>
       </section>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Encoding & Viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title & Description -->
+    <title>Body Mass</title>
+    <meta
+      name="description"
+      content="Body Mass Index Calculator: A tool to understand your weight in relation to your height. Provides a starting point to evaluate your overall health and well-being. Includes insights on healthy eating, regular exercise, adequate sleep, and the limitations of BMI."
+    />
+
+    <!-- Canonical link -->
+    <link
+      rel="canonical"
+      href="https://nicholasgillespie.github.io/body-mass/"
+    />
+
+    <!-- Favicon, Stylesheet, and Theme Color -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="/src/styles/core.scss" />
+    <!-- <link rel="stylesheet" href="/src/styles/advanced.scss" /> -->
+    <meta name="theme-color" content="#345ff6" />
+
+    <!-- Script -->
+    <script type="module" defer src="/src/scripts/main.js"></script>
+  </head>
+  <body>
+    <header class="l-canvas">
+      <!-- <div class="test">x</div> -->
+      <nav aria-label="Site" class="l-region">
+        <!-- <ul role="list"><li> -->
+        <a href="#" aria-current="page" class="logo">
+          <img src="/images/logo.svg" alt="" />
+          <span class="u-vh">Homepage</span>
+        </a>
+        <!-- </li></ul> -->
+      </nav>
+      <section class="l-switcher">
+        <div class="c-text l-flow">
+          <h1 id="calculator_label">Body Mass Index Calculator</h1>
+          <p>
+            Better understand your weight in relation to your height using our
+            body mass index (BM) calculator. While BMI is not the sole
+            determinant of a healthy weight, it offers a valuable starting point
+            to evaluate your overall health and well-being.
+          </p>
+        </div>
+        <div class="u-position--relative">
+          <div class="[ c-calculator ][ l-box ]">
+            <form action="" aria-labelledby="calculator_label" class="l-flow">
+              <h2 class="u-font-size-2">Enter your details below</h2>
+              <!-- Measurement System -->
+              <div
+                role="radiogroup"
+                aria-labelledby="measurement_system_label"
+                class="c-calculator__checkbox"
+              >
+                <p id="measurement_system_label" class="u-vh">
+                  Choose measurement system:
+                </p>
+                <div class="l-switcher">
+                  <div class="l-cluster">
+                    <input
+                      type="radio"
+                      id="metric_label"
+                      name="measurement_system"
+                      value="metric"
+                      checked
+                    />
+                    <label for="metric_label">Metric</label>
+                  </div>
+                  <div class="l-cluster">
+                    <input
+                      type="radio"
+                      id="imperial_label"
+                      name="measurement_system"
+                      value="imperial"
+                    />
+                    <label for="imperial_label">Imperial</label>
+                  </div>
+                </div>
+              </div>
+              <!-- Height and Weight Inputs -->
+              <div class="[ c-calculator__inputs ][ l-switcher ]">
+                <div class="[ c-calculator__inputs--height ][ l-stack ]">
+                  <label for="height_label">Height</label>
+                  <div class="input-wrapper">
+                    <input
+                      type="number"
+                      id="height_label"
+                      name="height"
+                      value="0"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="[ c-calculator__inputs--weight ][ l-stack ]">
+                  <label for="weight_label">Weight</label>
+                  <div class="input-wrapper">
+                    <input
+                      type="number"
+                      id="weight_label"
+                      name="weight"
+                      value="0"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Result -->
+              <div
+                class="[ c-calculator__result ][ l-box l-flow u-matched-radius__inner ]"
+              >
+                <h3>Welcome!</h3>
+                <p>
+                  Enter your height and weight and you’ll see your BMI result
+                  here
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>main</main>
+    <footer>footer</footer>
+  </body>
+</html>

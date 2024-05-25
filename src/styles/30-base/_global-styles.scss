@@ -108,11 +108,13 @@ select,
 textarea {
   inline-size: 100%;
   background: transparent;
-  color: currentColor;
-  padding: 0.8em;
+  // color: currentColor;
+  padding: var(--space-gutter-s);
+  padding-inline-end: calc(calc(var(--space-gutter-s) * 2) + 2ch);
   border: var(--border);
   border-radius: var(--radius);
   font-size: get(font-size, 1);
+  line-height: get(line-height, fine);
   font-weight: get(font-weight, semi-bold);
   color: get(color, gunmetal);
 
