@@ -70,7 +70,8 @@
 
 #### TODO
 
-- Prepare for the switch to the imperial measurement system, which will require additional input boxes. Plan to use a JavaScript-based toggle system to switch between measurement systems.
+- Prepare the switch for the imperial measurement system, which will require additional input boxes. Plan to use a JavaScript-based toggle system to switch between measurement systems.
+- In production, the input elements are not getting styled as expected. Need to investigate and resolve this issue.
 
 ---
 

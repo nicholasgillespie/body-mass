@@ -103,11 +103,9 @@ b {
 // accent-color: var(--color-accent);
 // }
 
-:is(
-    input:not([type="checkbox"], [type="radio"], [type="color"]),
-    select,
-    textarea
-  ) {
+input:not([type="checkbox"], [type="radio"], [type="color"]),
+select,
+textarea {
   inline-size: 100%;
   background: transparent;
   color: currentColor;
