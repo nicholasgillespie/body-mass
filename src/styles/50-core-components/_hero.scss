@@ -16,6 +16,7 @@
 
     & > * {
       padding-inline-end: calc(var(--space-gutter) * 2);
+      padding-inline-end: var(--space-2xl);
     }
   }
 

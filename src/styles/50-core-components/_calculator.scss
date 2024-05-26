@@ -12,8 +12,8 @@
   background-color: get(color, pure-white);
   box-shadow: var(--shadow);
 
-  @media screen and (max-width: 800px) {
-    --item-size-min: 15rem;
+  @media screen and (min-width: 1440px) {
+    --item-size-min: 25rem;
   }
 
   fieldset {
@@ -26,6 +26,10 @@
   .calculator__switch {
     color: get(color, gunmetal);
     font-weight: get(font-weight, semi-bold);
+
+    #imperial-switch {
+      display: none;
+    }
 
     input[type="radio"] {
       appearance: none;
@@ -72,6 +76,10 @@
       display: none;
     }
 
+    .l-switcher {
+      --switcher-target-width: 20rem;
+    }
+
     .l-stack {
       position: relative;
 
@@ -89,16 +97,13 @@
   }
 
   .calculator__result {
-    //
-  }
-
-  &__result {
     --matched-radius-space: calc(var(--radius) - var(--space-gutter));
     --box-radius-min: max(var(--matched-radius-space), var(--radius-s));
 
     background-color: get(color, blue);
     border-radius: var(--box-radius-min) var(--space-3xl) var(--space-3xl)
       var(--box-radius-min);
+    margin-block-start: var(--space-gutter);
 
     & * {
       --space-flow: 1em;

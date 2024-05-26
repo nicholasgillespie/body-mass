@@ -30,7 +30,7 @@
   <body>
     <header class="[ site-head ][ l-canvas ]">
       <nav aria-label="Site">
-        <a href="#" aria-current="page" class="logo">
+        <a href="/" aria-current="page" class="logo">
           <img src="/images/logo.svg" alt="" />
           <span class="u-vh">Homepage</span>
         </a>
@@ -74,7 +74,7 @@
                         ></label
                       >
                     </div>
-                    <div class="l-cluster">
+                    <div class="l-cluster" id="imperial-switch">
                       <input
                         type="radio"
                         id="imperial"
@@ -96,10 +96,10 @@
               <div class="[ calculator__inputs ][ xxx l-switcher ]">
                 <!-- Height Inputs -->
                 <fieldset>
-                  <legend class="u-vh">Height</legend>
+                  <legend>Height</legend>
                   <div class="l-switcher">
                     <div class="[ l-stack ][ js-metric ]">
-                      <label for="centimeters">Centimeters</label>
+                      <label class="u-vh" for="centimeters">Centimeters</label>
                       <input
                         type="number"
                         id="centimeters"
@@ -109,12 +109,12 @@
                       <span>cm</span>
                     </div>
                     <div class="[ l-stack ][ js-imperial ]">
-                      <label for="feet">Feet</label>
+                      <label class="u-vh" for="feet">Feet</label>
                       <input type="number" id="feet" name="feet" value="0" />
                       <span>ft</span>
                     </div>
                     <div class="[ l-stack ][ js-imperial ]">
-                      <label for="inches">Inches</label>
+                      <label class="u-vh" for="inches">Inches</label>
                       <input
                         type="number"
                         id="inches"
@@ -127,10 +127,10 @@
                 </fieldset>
                 <!-- Weight Inputs -->
                 <fieldset>
-                  <legend class="u-vh">Weight</legend>
+                  <legend>Weight</legend>
                   <div class="l-switcher">
                     <div class="[ l-stack ][ js-metric ]">
-                      <label for="kilograms">Kilograms</label>
+                      <label class="u-vh" for="kilograms">Kilograms</label>
                       <input
                         type="number"
                         id="kilograms"
@@ -140,7 +140,7 @@
                       <span>kg</span>
                     </div>
                     <div class="[ l-stack ][ js-imperial ]">
-                      <label for="stones">Stones</label>
+                      <label class="u-vh" for="stones">Stones</label>
                       <input
                         type="number"
                         id="stones"
@@ -150,7 +150,7 @@
                       <span>st</span>
                     </div>
                     <div class="[ l-stack ][ js-imperial ]">
-                      <label for="pounds">Pounds</label>
+                      <label class="u-vh" for="pounds">Pounds</label>
                       <input
                         type="number"
                         id="pounds"
@@ -163,7 +163,15 @@
                 </fieldset>
               </div>
             </form>
-            <div class="calculator__result"></div>
+            <div class="calculator__result">
+              <div class="l-box l-flow">
+                <h2>Welcome!</h2>
+                <p>
+                  Enter your height and weight and you’ll see your BMI result
+                  here
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

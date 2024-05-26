@@ -87,6 +87,17 @@
 - Test the toggle system to ensure it works as expected.
 - Continue with the development of the calculator BMI results.
 
+## 2024-05-26 - Morning
+
+### Toggle System and Layout Completion
+
+- The JavaScript-based toggle system for switching between the metric and imperial measurement systems has been successfully implemented.
+- The layout for the calculator is functioning as expected, and the transition between different measurement systems is smooth and seamless.
+
+#### TODO
+
+- The next step is to modify the `calculateBMI` function to display the calculated BMI results in the browser's user interface, rather than logging them to the console.
+
 ---
 
 ## [Date] - [Session]
