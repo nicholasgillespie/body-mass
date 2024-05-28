@@ -98,6 +98,17 @@
 
 - The next step is to modify the `calculateBMI` function to display the calculated BMI results in the browser's user interface, rather than logging them to the console.
 
+## 2024-05-28 - Afternoon
+
+### Completion of `calculateBMI` Function
+
+- The `calculateBMI` function has been successfully enhanced to calculate BMI using either metric or imperial systems, validate inputs, and display the results, including BMI value, classification, and healthy weight range, on the user interface.
+- The user interface updates smoothly and provides an output to the user.
+
+#### TODO
+
+- Deal with the hero background and continue with the integration of the graphic design.
+
 ---
 
 ## [Date] - [Session]

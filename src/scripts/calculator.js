@@ -9,28 +9,89 @@ const calculator = {
 
   // FUNCTIONS
   calculateBMI() {
-    let height, weight;
+    // Helper function to get the value of an input field
+    const getValue = (id) => parseFloat(document.querySelector(`#${id}`).value);
 
+    // Get references to the elements we'll be updating
+    const lBoxElement = document.querySelector(".calculator__result .l-box");
+    const h2Element = document.querySelector(".calculator__result--value h2");
+    const pElement = document.querySelector(".calculator__result--value p");
+    const detailsElement = document.querySelector(
+      ".calculator__result--details"
+    );
+
+    let height, weight, lowerWeight, upperWeight, unit;
+
+    // Check which unit system is selected and calculate height and weight accordingly
     if (this.metric.checked) {
-      height = parseFloat(document.querySelector("#centimeters").value) / 100;
-      weight = parseFloat(document.querySelector("#kilograms").value);
+      height = getValue("centimeters") / 100;
+      weight = getValue("kilograms");
+      unit = "kgs";
     } else if (this.imperial.checked) {
-      const feet = parseFloat(document.querySelector("#feet").value);
-      const inches = parseFloat(document.querySelector("#inches").value);
-      height = (feet * 12 + inches) * 0.0254;
-
-      const stones = parseFloat(document.querySelector("#stones").value);
-      const pounds = parseFloat(document.querySelector("#pounds").value);
-      weight = (stones * 14 + pounds) * 0.453592;
+      height = (getValue("feet") * 12 + getValue("inches")) * 0.0254;
+      weight = (getValue("stones") * 14 + getValue("pounds")) * 0.453592;
+      unit = "";
+    } else {
+      throw new Error("Please select either metric or imperial");
     }
 
-    if (isNaN(height) || isNaN(weight)) {
-      console.log("Please enter valid height and weight values");
-      return;
+    // Validate the height and weight values
+    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+      throw new Error("Please enter valid height and weight values");
     }
 
-    const bmi = weight / (height * height);
-    console.log("BMI: ", bmi);
+    // Calculate the square of the height
+    const heightSquared = height * height;
+
+    // Calculate the lower and upper weight limits for a healthy BMI
+    lowerWeight = (18.5 * heightSquared).toFixed(1);
+    upperWeight = (24.9 * heightSquared).toFixed(1);
+
+    // If the unit system is imperial, convert the weight limits from kg to lbs
+    if (this.imperial.checked) {
+      lowerWeight /= 0.453592;
+      upperWeight /= 0.453592;
+    }
+
+    // Calculate the BMI
+    const bmi = weight / heightSquared;
+
+    // Determine the BMI classification
+    const classifications = {
+      underweight: bmi < 18.5,
+      "healthy weight": bmi >= 18.5 && bmi < 25,
+      overweight: bmi >= 25 && bmi < 30,
+      obese: bmi >= 30,
+    };
+    const classification = Object.keys(classifications).find(
+      (key) => classifications[key]
+    );
+
+    // Update the UI with the calculated BMI
+    lBoxElement.classList.add("l-switcher");
+    h2Element.classList.add("p");
+    h2Element.textContent = "So your BMI is...";
+    pElement.classList.add("h1");
+    pElement.textContent = `${bmi.toFixed(2)}`;
+
+    // Prepare the weight limit strings for display
+    let lowerWeightDisplay, upperWeightDisplay;
+
+    if (this.imperial.checked) {
+      const lowerWeightStn = Math.floor(lowerWeight / 14);
+      const lowerWeightLbs = (lowerWeight % 14).toFixed(1);
+      const upperWeightStn = Math.floor(upperWeight / 14);
+      const upperWeightLbs = (upperWeight % 14).toFixed(1);
+
+      lowerWeightDisplay = `${lowerWeightStn}st ${lowerWeightLbs}lbs`;
+      upperWeightDisplay = `${upperWeightStn}st ${upperWeightLbs}lbs`;
+    } else {
+      lowerWeightDisplay = `${lowerWeight}${unit}`;
+      upperWeightDisplay = `${upperWeight}${unit}`;
+    }
+
+    // Update the UI with the BMI classification and weight limits
+    detailsElement.innerHTML = `Your BMI suggests you’re ${classification}. Your ideal weight is between <strong>${lowerWeightDisplay}</strong> - <strong>${upperWeightDisplay}</strong>.`;
   },
 
   handleMetric() {

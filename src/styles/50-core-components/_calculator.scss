@@ -99,6 +99,7 @@
   .calculator__result {
     --matched-radius-space: calc(var(--radius) - var(--space-gutter));
     --box-radius-min: max(var(--matched-radius-space), var(--radius-s));
+    --switcher-vertical-alignment: flex-end;
 
     background-color: get(color, blue);
     border-radius: var(--box-radius-min) var(--space-3xl) var(--space-3xl)
@@ -108,6 +109,20 @@
     & * {
       --space-flow: 1em;
       color: get(color, pure-white);
+    }
+
+    .p {
+      font-size: get(font-size, base);
+      line-height: get(line-height, base);
+      font-weight: get(font-weight, base);
+      margin-block-end: 1em;
+    }
+
+    .h1 {
+      font-size: get(font-size, 5);
+      line-height: get(line-height, fine);
+      font-weight: get(font-weight, semi-bold);
+      margin: 0;
     }
   }
 }
