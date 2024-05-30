@@ -27,6 +27,10 @@
     padding-block: var(--space-m-xl) var(--space-xl-l);
     max-block-size: var(--nav-block-size);
 
+    @media screen and (max-width: 800px) {
+      text-align: center;
+    }
+
     .logo {
       border-radius: 100%;
 

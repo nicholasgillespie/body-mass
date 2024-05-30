@@ -7,7 +7,7 @@
       calc(var(--font-size-base) * 4 * var(--line-height-base)) + calc(2em * 1)
   );
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 760px) {
     flex-direction: column;
   }
 
@@ -17,7 +17,7 @@
     padding-block: var(--space-m-2xl) var(--space-3xl);
     min-block-size: calc(var(--hero__form-block-size) + 10vh);
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 760px) {
       --space-flow: 1em;
       --hero__form-block-size: none;
       padding-block: 0 var(--space-gutter-l);
@@ -28,14 +28,14 @@
     & > * {
       padding-inline-end: var(--space-2xl);
 
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 760px) {
         text-align: center;
         margin-inline: auto;
         padding-inline-end: 0;
       }
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 760px) {
       h1 {
         max-inline-size: 15ch;
       }
