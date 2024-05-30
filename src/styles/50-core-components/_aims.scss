@@ -1,0 +1,24 @@
+.aims {
+  --sidebar-target-width: 100%;
+  --sidebar-vertical-alignment: center;
+  --space-region: var(--space-2xl);
+  --space-sidebar: var(--space-l);
+  background: linear-gradient(135deg, #ffffff, #f5f9ff);
+
+  img {
+    block-size: var(--space-2xl);
+  }
+
+  h3 {
+    font-size: var(--font-size-2);
+  }
+
+  @media screen and (max-width: 800px) {
+    --sidebar-target-width: var(--space-2xl);
+    --switcher-target-width: 50rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    --sidebar-target-width: 100%;
+  }
+}

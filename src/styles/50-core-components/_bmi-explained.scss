@@ -1,0 +1,42 @@
+.bmi-explained {
+  --switcher-target-width: 30rem;
+  --switcher-vertical-alignment: center;
+  --fluid-0-128: clamp(0rem, -20.6452rem + 41.2903vi, 8rem);
+  margin-block-start: var(--fluid-0-128);
+  margin-block-end: var(--space-region);
+
+  img {
+    max-inline-size: 50%;
+  }
+
+  & > :last-child {
+    --fluid-68-185: clamp(4.25rem, -11.6286rem + 33.4286vi, 11.5625rem);
+    margin-block-start: var(--fluid-68-185);
+  }
+
+  @media screen and (max-width: 800px) {
+    grid-column: full-width;
+    gap: 0;
+    margin-block-start: 8rem;
+
+    & > :first-child {
+      max-inline-size: 50%;
+      margin-inline-start: calc(var(--space-gutter) * -2);
+      padding-inline-end: var(--space-gutter);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    & > :first-child {
+      max-inline-size: 100%;
+      margin: 0;
+      margin-block-start: var(--space-2xl);
+      padding: 0;
+    }
+
+    & > :last-child {
+      margin: 0;
+      margin-block-start: var(--space-gutter);
+    }
+  }
+}

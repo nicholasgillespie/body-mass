@@ -109,6 +109,18 @@
 
 - Deal with the hero background and continue with the integration of the graphic design.
 
+## 2024-05-30 Morning
+
+### Hero Background and Key Sections Completed
+
+- The background has been successfully completed.
+- The "bmi-explained" section has been completed.
+- The "aims" section has been completed.
+
+#### TODO
+
+- Move on to the "limitations" section.
+
 ---
 
 ## [Date] - [Session]

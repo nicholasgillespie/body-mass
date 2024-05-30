@@ -12,6 +12,13 @@
     background: linear-gradient(to right, #ffffff, #e1f1fe);
   }
 
+  @media screen and (max-width: 800px) {
+    &:after {
+      content: "";
+      grid-column: full-width;
+    }
+  }
+
   // navigation
   nav {
     --nav-block-size: calc(
