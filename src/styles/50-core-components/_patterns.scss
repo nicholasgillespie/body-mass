@@ -1,0 +1,10 @@
+.pattern-01 {
+  position: absolute;
+  top: var(--space-gutter);
+  right: var(--space-gutter);
+  z-index: -1;
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+}
