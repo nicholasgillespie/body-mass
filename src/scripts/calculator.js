@@ -12,6 +12,25 @@ const calculator = {
     // Helper function to get the value of an input field
     const getValue = (id) => parseFloat(document.querySelector(`#${id}`).value);
 
+    // Get the height and weight values
+    let height, weight, lowerWeight, upperWeight, unit;
+
+    // Retrieves and converts height and weight based on the selected unit system (metric or imperial).
+    if (this.metric.checked) {
+      height = getValue("centimeters");
+      weight = getValue("kilograms");
+    } else if (this.imperial.checked) {
+      height = getValue("feet") * 12 + getValue("inches");
+      weight = getValue("stones") * 14 + getValue("pounds");
+    } else {
+      throw new Error("Please select either metric or imperial");
+    }
+
+    // Check if both height and weight have been entered
+    if (!height || !weight || isNaN(height) || isNaN(weight)) {
+      return; // Exit the function if not
+    }
+
     // Get references to the elements we'll be updating
     const lBoxElement = document.querySelector(".calculator__result .l-box");
     const h2Element = document.querySelector(".calculator__result--value h2");
@@ -19,8 +38,6 @@ const calculator = {
     const detailsElement = document.querySelector(
       ".calculator__result--details"
     );
-
-    let height, weight, lowerWeight, upperWeight, unit;
 
     // Check which unit system is selected and calculate height and weight accordingly
     if (this.metric.checked) {

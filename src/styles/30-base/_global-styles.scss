@@ -121,7 +121,7 @@ textarea {
   color: get(color, gunmetal);
 
   &::placeholder {
-    color: wheat;
+    color: get(color, gunmetal);
   }
 }
 
